@@ -1,4 +1,1 @@
 PyPDF2
-python-pptx
-python-docx
-openpyxl
