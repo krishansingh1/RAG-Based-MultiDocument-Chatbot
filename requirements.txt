@@ -1,4 +1,12 @@
+streamlit
 PyPDF2
-python-pptx
 python-docx
+python-pptx
 openpyxl
+langchain
+langchain-community
+langchain-text-splitters
+langchain-google-genai
+google-generativeai
+faiss-cpu
+python-dotenv
