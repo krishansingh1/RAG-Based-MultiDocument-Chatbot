@@ -96,10 +96,10 @@ def handle_question(user_question, model_key):
 def main():
     st.set_page_config(
         page_title="Multi-Doc RAG Agent",
-        page_icon="📚",
+        page_icon="",
         layout="wide",
     )
-    st.header("📚 Multi-Document RAG Agent 🤖")
+    st.header("Multi-Document RAG Agent")
     st.caption("Upload PDFs, Word docs, PowerPoints, or Excel files — then ask questions about them.")
 
     # Initialize chat history in session state
@@ -110,7 +110,7 @@ def main():
 
     # ── Sidebar ──
     with st.sidebar:
-        st.title("⚙️ Settings")
+        st.title("Settings")
 
         # LLM selector
         models = list_models()
@@ -121,7 +121,7 @@ def main():
         )
 
         st.divider()
-        st.title("📁 Upload Documents")
+        st.title("Upload Documents")
 
         uploaded_files = st.file_uploader(
             "Supported: PDF, DOCX, PPTX, XLSX",
@@ -147,10 +147,10 @@ def main():
 
                     st.session_state.docs_processed = True
                     st.session_state.chat_history = []
-                    st.success(f"✅ Processed {len(uploaded_files)} file(s) into {len(chunks)} chunks!")
+                    st.success(f" Processed {len(uploaded_files)} file(s) into {len(chunks)} chunks!")
 
         st.divider()
-        if st.button("🗑️ Clear Chat"):
+        if st.button("Clear Chat"):
             st.session_state.chat_history = []
 
     # ── Chat Area ──
@@ -162,7 +162,7 @@ def main():
     # Chat input
     if prompt := st.chat_input("Ask a question about your documents..."):
         if not st.session_state.docs_processed:
-            st.warning("⚠️ Please upload and process documents first.")
+            st.warning("Please upload and process documents first.")
         else:
             # Show user message
             st.session_state.chat_history.append({"role": "user", "content": prompt})
